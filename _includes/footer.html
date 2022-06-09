@@ -18,7 +18,7 @@
                         <div class="column is-marginless">
                             <h5 class="has-text-grey-lighter">{{site.author-name}}</h5>
                             <div class="content has-text-grey">
-                                <p>{{site.author-about | truncate: 95 }}</p>
+                                <p>{{site.author-about | truncate: 100 }}</p>
                             </div>
                         </div>
                     </div>
@@ -29,7 +29,7 @@
             <div class="column has-text-white">
                 <h3>More Links</h3>
                 {% for sitepage in site.html_pages offset: 4 %}
-                {% unless sitepage.url == '/'  limit: 2 %}
+                {% unless sitepage.url == '/'  limit: 0 %}
                 <li>
                     <a href="{{sitepage.url | absolute_url}}">{{sitepage.title}}</a>
                 </li>
@@ -43,7 +43,7 @@
             <!--Blog-post Section-->
             <div class="column has-text-white">
                 <h3>Recent Posts</h3>
-                {% for post in site.posts offset: 0 limit:3 %}
+                {% for post in site.posts offset: 0 limit:0 %}
                 <li>
                     <a href="{{post.url | absolute_url}}">{{post.title}}</a>
                 </li>
